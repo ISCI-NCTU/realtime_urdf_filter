@@ -1,6 +1,5 @@
-realtime_urdf_filter
-====================
-
+# realtime_urdf_filter
+## Introduction
 This package provides OpenGL-accelerated, shader-based filtering for depth
 images. Scene geometry is defined in URDF models, along with parameters
 defining the camera's location and filtering parameters.  Both static
@@ -12,12 +11,16 @@ rendered from the same point of view. As a result, we can access the measured
 as well as the virtual depth map in the shader, where we can define efficient
 comparision operations.
 
-Example of robot self filtering to proprocess for human skeleton tracking:
+## Contributors
+- This package was originally fork from [realtime_urdf_filter](https://github.com/JimmyDaSilva/realtime_urdf_filter) / [JimmyDaSilva](https://github.com/JimmyDaSilva)
+- Maintainer : [Howard Chen](https://github.com/s880367)
+
+**Example of robot self filtering to proprocess for human skeleton tracking:**
 
 <img src="images/tracker.png" alt="Tracker Preprocessing" style="width: 320px;"/>
 
-Robot self filtering for object manipulation:
-   
+**Robot self filtering for object manipulation:**
+
 <img src="images/grasping.png" alt="Robot Self Filtering" style="width: 320px;"/>
 
 <img src="images/rviz.png" alt="Robot Self Filtering" style="max-width: 50 %;"/>
@@ -137,7 +140,7 @@ In that case, a simple work around (read: "hack") is to replace the "solid"
 with "rolid", and assimp loads it as a binary file.
 
 ```
-    printf 'r' | dd of=bad_stl_file.STL bs=1 seek=0 count=1 conv=notrunc 
+    printf 'r' | dd of=bad_stl_file.STL bs=1 seek=0 count=1 conv=notrunc
 ```
 
 I'm not exactly sure why RViz does not seem to have this problem.
@@ -147,4 +150,3 @@ License
 
 The code is licensed under the BSD License, see the LICENSE file in the project
 root dir.
-
