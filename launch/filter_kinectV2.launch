@@ -10,7 +10,16 @@
 
     <!-- WARNING: This file contains a hack for the KinectV2 -->
     <rosparam command="load" file="$(find realtime_urdf_filter)/launch/filter_kinectV2_parameters.yaml"/>
-  </node>                 
+  </node>        
+
+  <!-- Load an example URDF 
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find realtime_urdf_filter)/urdf/example.urdf.xml'"/>-->
+
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find tm_description)/urdf/tm700_demo.urdf.xacro'"/>
+
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
+    <param name="tf_prefix" value=""/>
+  </node>         
 
 </launch>
 
