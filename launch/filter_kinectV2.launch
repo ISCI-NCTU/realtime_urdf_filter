@@ -6,16 +6,16 @@
     <remap from="~input_depth" to="/$(arg kinect_name)/sd/image_depth_rect"/>
     <remap from="~output_depth" to="/$(arg kinect_name)/sd/image_depth_rect_filtered" />
     <remap from="~output_mask" to="/$(arg kinect_name)/urdf_filtered_mask" />
-    <param name="camera_frame" value="/$(arg kinect_name)_ir_optical_frame" />
+    <param name="camera_frame" value="/$(arg kinect_name)_link" />
 
     <!-- WARNING: This file contains a hack for the KinectV2 -->
     <rosparam command="load" file="$(find realtime_urdf_filter)/launch/filter_kinectV2_parameters.yaml"/>
   </node>        
 
-  <!-- Load an example URDF 
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find realtime_urdf_filter)/urdf/example.urdf.xml'"/>-->
+  <!-- Load an example URDF -->
+  <!--param name="robot_description" command="$(find xacro)/xacro.py '$(find realtime_urdf_filter)/urdf/example.urdf.xml'"/>-->
 
-  <param name="robot_description" command="$(find xacro)/xacro.py '$(find tm_description)/urdf/tm700_demo.urdf.xacro'"/>
+  <param name="robot_description" command="$(find xacro)/xacro.py '$(find tm_description)/urdf/tm700_robot.urdf.xacro'"/>
 
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher">
     <param name="tf_prefix" value=""/>
