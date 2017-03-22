@@ -2,7 +2,7 @@ fixed_frame: /base_link
 #camera_frame: /kinect1_rgb_optical_frame
 ### WARNING: Add 0.02 is a HACK to make it work with the KinectV2
 camera_offset:
-  translation: [-0.1, 0.07, 0.0]
+  translation: [-0.09, 0.0, 0.0]
   rotation:    [0.0, 0.0, 0.0, 1.0]
 # There is one entry for each URDIF that should be filtered
 models: 
