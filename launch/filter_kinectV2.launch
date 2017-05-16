@@ -9,7 +9,7 @@
     <param name="camera_frame" value="/$(arg kinect_name)_link" />
 
     <!-- WARNING: This file contains a hack for the KinectV2 -->
-    <rosparam command="load" file="$(find realtime_urdf_filter)/launch/filter_kinectV2_parameters.yaml"/>
+    <rosparam command="load" file="$(find realtime_urdf_filter)/launch/filter_$(arg kinect_name)_parameters.yaml"/>
   </node>        
 
   <!-- Load an example URDF -->
